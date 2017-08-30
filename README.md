@@ -9,6 +9,7 @@
 ° Customizable Scripts.
 
 Files:
+
 [month][year].mac_recieves_dhcp_lease # working macs, in $HOME
 
 [month][year].mac_no_dhcp_lease # no dhcp lease, in $HOME
@@ -28,5 +29,7 @@ server-monitor.sh # depends on redundanz.sh
 serv-if-up.sh # depends on redundanz.sh
 
 sCRYPtUPdater.sh # Syntaxchecker and update to /usr/local/bin
+
+#
 
 no license, free for use
