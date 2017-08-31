@@ -21,7 +21,7 @@ LANG="C" ;
 IFS=$(echo -en "\n\b") ;
 syntaxCHkr="pychecker shellcheck perl" ;
 
-# catuser: to get the first logged user as root
+# catuser: to get the first logged user, while running with sudo
 catuser="$(for i in $(who -u | wc -l); do who | head -n1 | tail -n"$i" | awk '{print $1}'; done)" ;
 # the Work Directory
 userHome="/home/${catuser}/${dirINhome}" ;
