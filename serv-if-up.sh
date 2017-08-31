@@ -15,8 +15,6 @@ LANG="C";
 
 countwarn="0" ;
 
-empty='' ;
-
 PIDof=$(pgrep redundanz.sh) ;
 
 		if [[ "$PIDof" != '' ]] ;
