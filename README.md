@@ -24,6 +24,8 @@ Open all files in your favorite Editor.
 
 Edit shi3lD.sh and set $interface and $macadd.
 
+Edit sCRYPtUPdater.sh and set $dirINhome and $crapC0D3.
+
 Make a space somewhere in all files, and save all files.
 
 Run ./sCRYPtUPdater.sh from $HOME/bash-dev-enviro. You must have an entry in the sudoers file.
