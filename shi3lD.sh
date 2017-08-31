@@ -23,7 +23,6 @@ macadd="" ;
 else
 
 clear && echo -e "\n" ;
-interface="enp0s25" ;
 puffed='' ;
 empty='' ;
 nnumberr="0" ;
