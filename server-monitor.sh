@@ -19,8 +19,6 @@ IFS="$(echo -en "\n\b")" ;
 
 loadav=$(uptime | awk '{print $7, $8, $9, $10, $11}') ;
 
-empty='' ;
-
 ## shi3lD.sh
 
 file01a="shi3lD.sh"
