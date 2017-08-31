@@ -33,8 +33,8 @@ empty='' ;
 wholeC0unt4="1" ;
 # listONmest4tus: to print how many bytes you've changed the last file you've edited
 listONmest4tus="0" ;
-#excULEC0D3s: because of perfection I should take all away
-excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091" ; export excULEC0D3s ;
+excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091" ; 
+export excULEC0D3s ;
 
 
 sC4n(){
@@ -137,9 +137,9 @@ diffANDchecksyntax(){
 		fi
 			if [[ "$?" != 0 ]] ;
 		then
-			printf "Do you want to re-edit? "; read -r
+			printf "ok to re-edit? " ; read -r
 
-			if [[ "$REPLY" = "pl" ]] ;
+			if [[ "$REPLY" = "ok" ]] ;
         then
             nano "$listONme" && diffANDchecksyntax ;
 		else
