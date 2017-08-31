@@ -2,9 +2,9 @@
 
 # version 0.01
 # Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4.
-
+# 
 # Set the path to your Scripts like: dirINhome="myDistro" or dirINhome="Desktop/bash"
-dirINhome="Documents/bash/working-in-path" ;
+dirINhome="bash-dev-enviro" ;
 
 # set the file a file on your Project Dir's that you use for crap code
 crapC0D3="crap" ;
@@ -27,12 +27,11 @@ catuser="$(for i in $(who -u | wc -l); do who | head -n1 | tail -n"$i" | awk '{p
 userHome="/home/${catuser}/${dirINhome}" ;
 # User Host Control
 echo -e "\n$(date) :: as $USER :: in $(uname -n) :: in $userHome :: WORK -\n" >>"$userHome/wH0rUNSon" ;
-# empty: an empty var to compare non zero outputs .
-empty='' ;
 # wholeC0unt4: to start by zero after first 
 wholeC0unt4="1" ;
 # listONmest4tus: to print how many bytes you've changed the last file you've edited
 listONmest4tus="0" ;
+# excULEC0D3s
 excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091" ; 
 export excULEC0D3s ;
 
@@ -42,7 +41,7 @@ sC4n(){
 # toDayChanged: do a list of changed files in userHome
 toDayChanged=$(find "$userHome" -cmin -"$minut3S" -type f | grep -v grep | grep -vE '.kate.swp|.save|.[a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]|.[a-zA-Z][0-9][0-9][0-9][0-9][0-9]|wH0rUNSon' | grep -v "$crapC0D3" | grep -vE '.wav|.jpg|.gif|.mp3|.ogg|.aif|.png|.avi|.mp4|master|HEAD|COMMIT_EDITMSG|config|description|sample|index|exclude|refs' | grep -vE '[a-z0-9]{38}') ;
 
-			if [[ "$toDayChanged" != "$empty" ]] ;
+			if [[ "$toDayChanged" != '' ]] ;
 	then
 			if [[ "$wholeC0unt4" = "0" ]] ;
 	then
@@ -71,12 +70,12 @@ fF1l3suffix=$(echo "$listONme" | sed 's/\//\ /g'| sed 's/\./\ /g' | awk '{print 
 
 ### ###
 
-	if [[ "$(du -b "$listONme" | cut -f1 2>/dev/null)" -gt "$(du -b "/usr/local/bin/$toC0pyIS" | cut -f1 2>/dev/null)" ]] && [[ "$toC0pyIS" != "wH0rUNSon" ]] && [[ "$toDayChanged" != "$empty" ]] ;
+	if [[ "$(du -b "$listONme" | cut -f1 2>/dev/null)" -gt "$(du -b "/usr/local/bin/$toC0pyIS" | cut -f1 2>/dev/null)" ]] && [[ "$toC0pyIS" != "wH0rUNSon" ]] && [[ "$toDayChanged" != '' ]] ;
 then
 	let listONmest4tus=$(du -b "$listONme" | cut -f1)-$(du -b "/usr/local/bin/$toC0pyIS" | cut -f1) 2>/dev/null
 	diffANDchecksyntax ;
 
-	elif [[ "$(du -b "$listONme" | cut -f1 2>/dev/null)" -lt "$(du -b "/usr/local/bin/$toC0pyIS" | cut -f1 2>/dev/null)" ]] && [[ "$toC0pyIS" != "wH0rUNSon" ]] && [[ "$toDayChanged" != "$empty" ]] ;
+	elif [[ "$(du -b "$listONme" | cut -f1 2>/dev/null)" -lt "$(du -b "/usr/local/bin/$toC0pyIS" | cut -f1 2>/dev/null)" ]] && [[ "$toC0pyIS" != "wH0rUNSon" ]] && [[ "$toDayChanged" != '' ]] ;
 then
 	let listONmest4tus=$(du -b "/usr/local/bin/$toC0pyIS" | cut -f1)-$(du -b "$listONme" | cut -f1) 2>/dev/null
 	diffANDchecksyntax ;
@@ -149,7 +148,7 @@ diffANDchecksyntax(){
 			tr -cd '\11\12\15\40-\176' <"$listONme" >/dev/shm/convert-T0-utf-8.tmp &&
 			sudo cp -f /dev/shm/convert-T0-utf-8.tmp "$listONme" ;
 
-			elif [[ $ch3kingSnx = "$empty" ]] ;
+			elif [[ $ch3kingSnx = '' ]] ;
 		then
 			echo -e "\nnothing to check.\n" ;
 			copyToPath ;
@@ -238,7 +237,7 @@ update from $userHome to /usr/local/bin.\n" ;
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 printf "type here in minutes: " ; read minut3S ;
 
-	if [[ "$minut3S" = "$empty" ]] ;
+	if [[ "$minut3S" = '' ]] ;
 then
 	exiter ;
 else
