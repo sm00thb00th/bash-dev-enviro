@@ -11,9 +11,11 @@ interface="enp0s25" ;
 # use enp0s[0-9][0-9] or eth[0-9]
 # paste the line below in to the terminal and save your vendors MAC-ADDRESS in the var macadd.
 # ip link show enp0s25 | grep ether | awk '{print $2}'
-macadd="00:25:64:b5:fd:9e" ;
+macadd="" ;
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
+#
+# TODO: workaround to save the vendors mac address
 
 		if [ ! $EUID = 0 ] ;
 	then
