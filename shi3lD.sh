@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# version 0.01
+# version 0.01 
 # Changes your MAC-ADDRESS and do a list of usable and not usable MAC-ADDRESSES in $HOME.
 # restart clamd and snort if failure, cut the Ethernet Interface connection, while starting up.
 # ctrl+C cut's Ethernet Interface connection and revert to your vendors MAC-ADDRESS.
@@ -11,7 +11,7 @@ interface="enp0s25" ;
 # use enp0s[0-9][0-9] or eth[0-9]
 # paste the line below in to the terminal and save your vendors MAC-ADDRESS in the var macadd.
 # ip link show enp0s25 | grep ether | awk '{print $2}'
-macadd="" ;
+macadd="00:25:64:b5:fd:9e" ;
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 

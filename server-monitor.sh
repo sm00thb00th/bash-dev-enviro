@@ -1,12 +1,16 @@
 #!/bin/bash
 
-# version 0.01
+# version 0.01 
 #MONITOR
 
 		if [ ! $EUID = 0 ] ;
 	then
 		sudo "$0" ;
 else
+
+	if [[ "$(ps aux | grep -v grep | grep -v nano | grep redundanz.sh | awk '{print $2}' | wc -l) " -gt "1" ]] ;
+then
+
 LANG="C" ;
 
 IFS="$(echo -en "\n\b")" ;
@@ -85,4 +89,5 @@ echo -e "\n :: $usersPID7 PID from $file01g by: "$users7"\n" ;
 ps aux | grep "$prgtotestg" | grep -v grep | tail -n1 ;
 
 
+fi
 fi

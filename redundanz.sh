@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# version 0.01
-# first run installs the environment
-# You can Add Programs to myPrograms, but remove bevor $HOME/installed
+# version 0.01 
+# first run installs the environment 
+# You can Add Programs to myPrograms, but remove bevor $HOME/installed 
 # monitors the servers and applications, defined in server-monitor.sh
+
+myPrograms="xfce4-terminal figlet x11-apps imagemagick nano snort clamav apache2 mysql-server pychecker shellcheck perl git" ;
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 
@@ -23,7 +25,7 @@ ex1Th4ndler(){
 }
 
 tester_(){
-myPrograms="figlet x11-apps imagemagick nano snort clamav apache2 mysql-server xfce4-terminal git" ;
+
 nNuM=$(echo "$myPrograms" | wc -w) ;
 
 		while [[ "$nNuM" != "0" ]] ;

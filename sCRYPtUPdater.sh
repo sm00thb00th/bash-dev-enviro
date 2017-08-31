@@ -3,8 +3,8 @@
 # version 0.01
 # Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4.
 
-# Set the path to your Scripts like: dirINhome="Documents/bash"
-dirINhome="Documents/bash" ;
+# Set the path to your Scripts like: dirINhome="Documents/bash" or just dirINhome="bash-dev-enviro"
+dirINhome="bash-dev-enviro" ;
 
 # set the file a file on your Project Dir's that you use for crap code
 crapC0D3="crap" ;
@@ -34,7 +34,7 @@ wholeC0unt4="1" ;
 # listONmest4tus: to print how many bytes you've changed the last file you've edited
 listONmest4tus="0" ;
 #excULEC0D3s: because of perfection I should take all away
-excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027" ; export excULEC0D3s ;
+excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091" ; export excULEC0D3s ;
 
 
 sC4n(){
@@ -229,7 +229,7 @@ fi
 fi
 ### ###
 	else
-        echo -e "\n\nYou Should check your 'userHome' Variable.\n" && exit 2 ;
+        echo -e "\n\nCheck the 'dirINhome' var at the Top of this script\n" && exit 2 ;
 fi
 }
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# version 0.01
+# version 0.01 
 # depends on shi3lD.sh
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
@@ -18,9 +18,9 @@ interface="enp0s25" ;
 uUSER="$(for i in $(who -u | wc -l); do who | head -n1 | tail -n"$i" | awk '{print $1}'; done)" ;
 homeordner="/home/$uUSER/" ;
 
-				if [[ "$(ps aux | grep -v grep | grep -v nano | grep shi3lD.sh | awk '{print $2}' | wc -l) " -gt "1" ]] ;
-			then
-			
+	if [[ "$(ps aux | grep -v grep | grep -v nano | grep shi3lD.sh | awk '{print $2}' | wc -l) " -gt "1" ]] ;
+then
+
 puff_MACs(){
 
 nnumberOFinterface="$(echo "$interface" | wc -w | tr -d ' ')" ;
