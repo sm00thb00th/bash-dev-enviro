@@ -100,8 +100,7 @@ touchtoC0pyinbin(){
 
 			diffANDchecksyntax ;
 		else
-            echo -e "\ntype correctly" ;
-            #&& read -p "..." ;
+			echo -e "\ntype correctly" ;
 		fi
 ### ###
 	else
@@ -112,7 +111,7 @@ fi
 
 diffANDchecksyntax(){
 
-            if [ -e "/usr/local/bin/$toC0pyIS" ] ;
+			if [ -e "/usr/local/bin/$toC0pyIS" ] ;
 	then
 			echo -e "\n check syntax for: $toC0pyIS\n" ;
 			diff -i "$listONme" "/usr/local/bin/$toC0pyIS" ;
@@ -140,27 +139,27 @@ diffANDchecksyntax(){
 			printf "ok to re-edit? " ; read -r
 
 			if [[ "$REPLY" = "ok" ]] ;
-        then
-            nano "$listONme" && diffANDchecksyntax ;
+		then
+			nano "$listONme" && diffANDchecksyntax ;
 		else
 			echo -e "\nno changes for  $listONme\n" ;
 		fi
 			elif [ "$?" = "2" ] ;
- 		then
- 			tr -cd '\11\12\15\40-\176' <"$listONme" >/dev/shm/convert-T0-utf-8.tmp &&
- 			sudo cp -f /dev/shm/convert-T0-utf-8.tmp "$listONme" ;
+		then
+			tr -cd '\11\12\15\40-\176' <"$listONme" >/dev/shm/convert-T0-utf-8.tmp &&
+			sudo cp -f /dev/shm/convert-T0-utf-8.tmp "$listONme" ;
 
 			elif [[ $ch3kingSnx = "$empty" ]] ;
 		then
 			echo -e "\nnothing to check.\n" ;
-            copyToPath ;
+			copyToPath ;
 		else
 			echo -e "\n$listONme appears to be ok.\n" ;
-            copyToPath ;
+			copyToPath ;
 		fi
 	fi
-        else
-            touchtoC0pyinbin ;
+		else
+			touchtoC0pyinbin ;
 fi
 }
 
@@ -175,7 +174,7 @@ copyToPath(){
 			if [[ "$REPLY" != "n" ]] ;
 		then
 			echo -e "\n" ;
-            sudo cp -f "$listONme" "/usr/local/bin/$toC0pyIS" ;
+			sudo cp -f "$listONme" "/usr/local/bin/$toC0pyIS" ;
 			sudo chown root:root "/usr/local/bin/$toC0pyIS" ;
 			sudo chmod 4755 "/usr/local/bin/$toC0pyIS" ;
 			sudo chmod u+s "/usr/local/bin/$toC0pyIS" ;
@@ -212,24 +211,24 @@ maincall(){
     then
 		((wholeC0unt4--)) ;
 ### ###
-	    if [[ "$listONmest4tus" != "0" ]] ;
-    then
-	    if [[ "$listONmest4tus" = "1" ]] ;
-    then
+		if [[ "$listONmest4tus" != "0" ]] ;
+	then
+		if [[ "$listONmest4tus" = "1" ]] ;
+	then
 		bYT3S="byte" ;
 	else
 		bYT3S="bytes" ;
 fi
-        echo -e "\nYou changed $listONmest4tus $bYT3S" && read -p "waiting..." ;
-        sC4n ;
-    else
+		echo -e "\nYou changed $listONmest4tus $bYT3S" && read -p "waiting..." ;
+		sC4n ;
+	else
 		listONmest4tus="0" ;
 		figlet no.changes && read -p "waiting..." ;
-        sC4n ;
+		sC4n ;
 fi
 ### ###
 	else
-        echo -e "\n\nCheck the 'dirINhome' var at the Top of this script\n" && exit 2 ;
+		echo -e "\n\nCheck the 'dirINhome' var at the Top of this script\n" && exit 2 ;
 fi
 }
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -243,9 +242,9 @@ printf "type here in minutes: " ; read minut3S ;
 then
 	exiter ;
 else
-        while true && trap 'exiter' SIGINT && trap 'cont1NU3' SIGQUIT ;
-    do
-	    maincall ;
-    done
+		while true && trap 'exiter' SIGINT && trap 'cont1NU3' SIGQUIT ;
+	do
+		maincall ;
+	done
 fi
 fi
