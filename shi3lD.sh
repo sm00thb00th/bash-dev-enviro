@@ -24,7 +24,6 @@ else
 
 clear && echo -e "\n" ;
 puffed='' ;
-empty='' ;
 nnumberr="0" ;
 #
 puffeRR(){
