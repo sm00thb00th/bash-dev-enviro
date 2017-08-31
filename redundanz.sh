@@ -5,7 +5,7 @@
 # You can Add Programs to myPrograms, but remove bevor $HOME/installed 
 # monitors the servers and applications, defined in server-monitor.sh
 
-myPrograms="xfce4-terminal figlet x11-apps imagemagick nano snort clamav apache2 mysql-server pychecker shellcheck perl git" ;
+myPrograms="xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano snort clamav apache2 mysql-server pychecker shellcheck perl git" ;
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 
