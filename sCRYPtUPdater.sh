@@ -3,7 +3,7 @@
 # version 0.01
 # Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4.
 
-# Set the path to your Scripts like: dirINhome="Documents/bash" or just dirINhome="bash-dev-enviro"
+# Set the path to your Scripts like: dirINhome="Dowloads/bash-dev-enviro" or dirINhome="Desktop/bash-dev-enviro"
 dirINhome="bash-dev-enviro" ;
 
 # set the file a file on your Project Dir's that you use for crap code
