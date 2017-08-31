@@ -47,7 +47,7 @@ testproga=$(whereis "$file01a" | cut -f2 -d : | cut -f2 -d\ | sed 's/\//\ /g' | 
 
 testprog1a=$(whereis "$file01a" | cut -f2 -d: | cut -f2 -d\ | sed 's/\//\ /g' | awk '{print $'"$testproga"'}') ;
 
-if [[ "$testprog1a" != "$empty" ]] && [[ $(whereis "$testprog1a" | sed 's/\//\ /g') =~ [^lib$|^bin$|^sbin$] ]] ;
+if [[ "$testprog1a" != '' ]] && [[ $(whereis "$testprog1a" | sed 's/\//\ /g') =~ [^lib$|^bin$|^sbin$] ]] ;
 
     then
 
@@ -73,7 +73,7 @@ testprogg=$(whereis "$file01g" | cut -f2 -d : | cut -f2 -d\ | sed 's/\//\ /g' | 
 
 testprog1g=$(whereis "$file01g" | cut -f2 -d: | cut -f2 -d\ | sed 's/\//\ /g' | awk '{print $'"$testprogg"'}') ;
 
-if [[ "$testprog1g" != "$empty" ]] && [[ $(whereis "$testprog1g" | sed 's/\//\ /g') =~ [^lib$|^bin$|^sbin$] ]] ;
+if [[ "$testprog1g" != '' ]] && [[ $(whereis "$testprog1g" | sed 's/\//\ /g') =~ [^lib$|^bin$|^sbin$] ]] ;
 
 then
 
