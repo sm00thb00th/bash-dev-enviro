@@ -19,7 +19,7 @@ empty='' ;
 
 PIDof=$(pgrep redundanz.sh) ;
 
-		if [[ "$PIDof" != "$empty" ]] ;
+		if [[ "$PIDof" != '' ]] ;
 then
 
 webserver="apache2" ;
@@ -68,7 +68,7 @@ checkport80=$(netstat -an | grep LISTEN | grep :80 | awk '{print $4}' | tail -n1
 
 sleep 2 ;
 
-        if [[ "$checkport80" = "$empty" ]];
+        if [[ "$checkport80" = '' ]];
 then
 	systemctl stop "$webserver".service ;
 
@@ -113,7 +113,7 @@ checkport25=$(netstat -an | grep LISTEN | grep :25 | awk '{print $4}' | tail -n1
 
 sleep 2 ;
 
-        if [[ "$checkport25" = "$empty" ]];
+        if [[ "$checkport25" = '' ]];
 then
 
 checkprog2=$(whereis "$mta" | awk '{print $2}') ;
@@ -167,7 +167,7 @@ checkport3306=$(netstat -an | grep LISTEN | grep :3306 | awk '{print $4}' | tail
 
 sleep 2 ;
 
-        if [[ "$checkport3306" = "$empty" ]];
+        if [[ "$checkport3306" = '' ]];
 then
 
 checkprog3=$(whereis "$datenbank" | awk '{print $2}') ;
@@ -221,7 +221,7 @@ if [[ "$WARN01" -lt "$PERCENTUSED01" ]] || [[ "$WARN02" -lt "$PERCENTUSED02" ]] 
 
 then
 
-if [[ "$IFHOMEEXIST" = "$empty" ]] ;
+if [[ "$IFHOMEEXIST" = '' ]] ;
 
 then
 
