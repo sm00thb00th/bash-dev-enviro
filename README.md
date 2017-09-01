@@ -12,29 +12,17 @@
 
 # Usage:
 
-Run first: ./redundanz.sh from $HOME/bash-dev-enviro. You must have an entry in the sudoers file
-
-The script will install all needed components:
-
-xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano snort clamav apache2 mysql-server pychecker shellcheck perl git
-
-Close ./redundanz with ctrl+C.
-
-Open all files in your favorite Editor.
+First:
 
 Edit shi3lD.sh and set $interface and $macadd.
 
 Edit sCRYPtUPdater.sh and set $dirINhome and $crapC0D3.
 
-Make a space somewhere in all files, and save all files.
+run ./iNST4LL.sh from ../bash-dev-enviro. You must have an entry in the sudoers file
 
-Run ./sCRYPtUPdater.sh from $HOME/bash-dev-enviro. You must have an entry in the sudoers file.
+The script will install all needed components:
 
-Set the time interval for 2 minutes only, just hit Enter, sCRYPtUPdater.sh is verbose.
-
-You should have 8 new files in /usr/local/bin.
-
-Close ./sCRYPtUPdater with ctrl+C.
+xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano snort clamav apache2 mysql-server pychecker shellcheck perl git
 
 Run from Terminal: sCRYPtUPdater.sh, redundanz.sh to:
 
