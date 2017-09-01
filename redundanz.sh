@@ -9,6 +9,8 @@ myPrograms="xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano snort 
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 
+LANG="C" ;
+
 		if [ ! $EUID = 0 ] ;
 	then
 		sudo "$0" ;
