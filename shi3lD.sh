@@ -26,7 +26,6 @@ macadd="00:25:64:b5:fd:9e" ;
 else
 
 clear && echo -e "\n" ;
-puffed='' ;
 nnumberr="0" ;
 #
 puffeRR(){
@@ -48,7 +47,6 @@ exitHandler(){
 
 			if [[ $REPLY =~ y|Y|j|J ]] ;
 		then
-			let df4="$nnumberr"/10/60 ;
 			sudo ip link set dev "$interface" down && sleep 5 && 
 			sudo ip link set dev "$interface" up && 
 			sudo ip link set dev "$interface" address "$macadd" && 
@@ -81,5 +79,4 @@ exitHandler(){
 		puffeRR ;
 	fi
 done
-
 fi
