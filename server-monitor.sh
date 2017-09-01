@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# version 0.01 
+# version 0.01
 
 #MONITOR
 
@@ -16,7 +16,7 @@ else
 	if [[ "$(ps aux | grep -v grep | grep -v nano | grep redundanz.sh | awk '{print $2}' | wc -l) " -gt "1" ]] ;
 then
 
-# dEFINe vars 
+# dEFINe vars
 
 loadav=$(uptime | awk '{print $7, $8, $9, $10, $11}') ;
 

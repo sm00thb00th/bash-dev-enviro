@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # version 0.01
-#REDUNDANZ 
+#REDUNDANZ
 
 		if [ ! $EUID = 0 ] ;
 	then
@@ -50,8 +50,6 @@ INODES=$(df -i | grep -E /$ | awk '{ print $2 }') ;
 
 FREEINODES=$(df -i | grep -E /$ | awk '{ print $4 }') ;
 
-catuser=$(for i in $(who -u | wc -l); do who | head -n1 | tail -n"$i" | awk '{print $1}'; done) ;
-
 > /tmp/mailapache2status ;
 
 > /tmp/mailsendmailstatus ;
@@ -81,7 +79,7 @@ date > /dev/pts/3 ;
 
 systemctl status "$webserver".service > /tmp/mailapache2status ;
 
-cat << EOM | mail "$catuser"@localhost
+cat << EOM | mail "$SUDO_USER"@localhost
 
 Subject:"$webserver" restartet
 
@@ -92,7 +90,7 @@ EOM
 
 systemctl status "$webserver".service > /tmp/mailapache2status ;
 
-cat << EOM | mail "$catuser"@localhost
+cat << EOM | mail "$SUDO_USER"@localhost
 
 Subject:"$webserver" cannot_restart
 
@@ -130,7 +128,7 @@ sleep 1 ;
 
 sleep 1 ;
 
-cat << EOM | mail "$catuser"@localhost
+cat << EOM | mail "$SUDO_USER"@localhost
 
 Subject:"$mta" restartet
 
@@ -146,7 +144,7 @@ date > /dev/pts/3 ;
 
 	date "+Start Attempt, Failure Time: %H.%M" > /tmp/mailsendmailstatus ;
 
-cat << EOM | mail "$catuser"@localhost
+cat << EOM | mail "$SUDO_USER"@localhost
 
 Subject:"$mta" cannot_restart
 
@@ -183,7 +181,7 @@ sleep 1 ;
 
 sleep 1 ;
 
-cat << EOM | mail "$catuser"@localhost
+cat << EOM | mail "$SUDO_USER"@localhost
 
 Subject:"$datenbank" restartet
 
@@ -199,7 +197,7 @@ date > /dev/pts/3 ;
 
 	date "+Start Attempt, Failure Time: %H.%M" > /tmp/mailmysqlstatus ;
 
-cat << EOM | "$datenbank" "$catuser"@localhost
+cat << EOM | "$datenbank" "$SUDO_USER"@localhost
 
 Subject:$datenbank failure.
 
@@ -233,7 +231,7 @@ fi
 
 countwarn=1 ;
 
-cat << EOM | mail "$catuser"@localhost
+cat << EOM | mail "$SUDO_USER"@localhost
 
 Subject:running_out_of_disk_space
 

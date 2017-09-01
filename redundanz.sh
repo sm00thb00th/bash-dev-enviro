@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# version 0.01 
-# first run installs the environment 
-# You can Add Programs to myPrograms, but remove bevor $HOME/installed 
+# version 0.01
+# first run installs the environment
+# You can Add Programs to myPrograms, but remove bevor $HOME/installed
 # monitors the servers and applications, defined in server-monitor.sh
 
 myPrograms="xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano snort clamav apache2 mysql-server pychecker shellcheck perl git" ;
@@ -15,8 +15,6 @@ LANG="C" ;
 	then
 		sudo "$0" ;
 else
-
-catuser=$(for i in $(who -u | wc -l); do who | head -n1 | tail -n"$i" | awk '{print $1}'; done) ;
 
 trap 'ex1Th4ndler' SIGINT ;
 
@@ -50,7 +48,7 @@ fi
 		((nNuM--)) ;
 	else
 		echo -e "\ninstalling ${toInst}..." ;
-		nohup apt-get --fix-missing --force-yes install "$toInst" | tee -a "/home/$catuser/installed" &
+		nohup apt-get --fix-missing --force-yes install "$toInst" | tee -a "/home/$SUDO_USER/installed" &
 		wait ;
 		apPR="$toInst, INSTALLED! " ;
 		sleep 1 ;
@@ -65,7 +63,7 @@ fi
 		printf "\rtesting for apps, $nNuM remaining, $apPR" ; sleep 2 ;
 		clear ;
 	done
-		chown "$catuser":"$catuser" "/home/$catuser/installed";
+		chown "$SUDO_USER":"$SUDO_USER" "/home/$SUDO_USER/installed";
 
 		run_redundanz_;
 }
@@ -74,7 +72,7 @@ run_redundanz_(){
 		setsid serv-if-up.sh >/dev/null 2>&1 < /dev/null &
 		watch -n3 -t --color server-monitor.sh ;
 }
-		if [ -e "/home/$catuser/installed" ] ;
+		if [ -e "/home/$SUDO_USER/installed" ] ;
 	then
 		run_redundanz_ ;
 	else

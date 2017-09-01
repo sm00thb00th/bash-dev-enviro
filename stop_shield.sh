@@ -21,11 +21,11 @@ take_a_look(){
 	ifDown0=$(ps aux | grep -v grep | grep clamd | grep -v nano | awk '{print $11}') ;
 	ifDown1=$(ps aux | grep -v grep | grep snort | grep -v nano | awk '{print $11}') ;
 
-	if [[ "$ifDown0" = '' ]]
+	if [[ "$ifDown0" = '' ]] ;
 then
 	echo -e "\nClamAV down, I will try to restart.";
 	
-    elif [[ "$ifDown1" = '' ]]
+    elif [[ "$ifDown1" = '' ]] ;
 then
 	echo -e "\nSnort down, I will try to restart.";
 fi

@@ -43,7 +43,7 @@ start_s(){
 	then
 		echo -e "snort is allready running ...\n" ;
 	else
-		#sudo chmod o+r /dev/bpf* ;
+		#sudo chmod o+r /dev/bpf*;
 	    sudo systemctl restart snort.service && echo -e "snort is running ...\n" ;
 		sleep 2 ;
 fi

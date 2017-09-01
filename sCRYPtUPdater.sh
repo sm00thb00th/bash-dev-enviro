@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # version 0.01
-# Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4.
-# 
+# Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4
+#
 # Set the path to your Scripts like: dirINhome="myDistro" or dirINhome="Desktop/bash"
 dirINhome="bash-dev-enviro" ;
 
@@ -21,10 +21,8 @@ LANG="C" ;
 IFS=$(echo -en "\n\b") ;
 syntaxCHkr="pychecker shellcheck perl" ;
 
-# catuser: to get the first logged user, while running with sudo
-catuser="$(for i in $(who -u | wc -l); do who | head -n1 | tail -n"$i" | awk '{print $1}'; done)" ;
 # the Work Directory
-userHome="/home/${catuser}/${dirINhome}" ;
+userHome="/home/${SUDO_USER}/${dirINhome}" ;
 # User Host Control
 echo -e "\n$(date) :: as $USER :: in $(uname -n) :: in $userHome :: WORK -\n" >>"$userHome/wH0rUNSon" ;
 # wholeC0unt4: to start by zero after first 
@@ -231,7 +229,7 @@ fi
 fi
 }
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-echo -e "\nHello $catuser, type the interval in minutes, you\b
+echo -e "\nHello $SUDO_USER, type the interval in minutes, you\b
 ussualy need to: write , save and hit enter.\b
 update from $userHome to /usr/local/bin.\n" ;
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
