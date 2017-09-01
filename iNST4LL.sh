@@ -78,6 +78,9 @@ done
 		printf "\r$toCopyPath" ; sleep 0.5 ;
 		((nNuM2--)) ;
 done
+
+	echo -e "\nwe have bash-dev-enviro successfully installed" ;
+
 	else
 		echo -e "\nallready installed, remove /home/$SUDO_USER/installed \nif you want to add new Programs to myPrograms" ;
 fi
