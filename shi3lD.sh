@@ -15,8 +15,10 @@ macadd="00:25:64:b5:fd:9e" ;
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 #
-# TODO: workaround to save the vendors mac address
-#		workaround when clamd fails, snort fails too.
+#	TODO:
+#
+#	workaround to save the vendors mac address
+#	workaround when clamd fails, snort fails too.
 
 		if [ ! $EUID = 0 ] ;
 	then
