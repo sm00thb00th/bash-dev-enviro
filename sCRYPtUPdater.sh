@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # version 0.01
-
 # Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4
 #
 # Set the path to your Scripts like: dirINhome="myDistro" or dirINhome="Desktop/bash"
@@ -12,7 +11,9 @@ dirINhome="bash-dev-enviro" ;
 crapC0D3="crap" ;
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
-# TODO: reset the time interval, because "du" stderr
+# TODO: 
+#		reset the time interval, because "du" stderr
+#		invalid byte sequence with "tr -cd '\11\12\15\40-\176'"
 #set -x
 
 		if [ ! $EUID = 0 ] ;
@@ -47,7 +48,7 @@ export excULEC0D3s ;
 sC4n(){
 
 # toDayChanged: do a list of changed files in userHome
-toDayChanged=$(find "$userHome" -cmin -"$minut3S" -type f | grep -v grep | grep -vE '.kate.swp|.save|.[a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]|.[a-zA-Z][0-9][0-9][0-9][0-9][0-9]|wH0rUNSon' | grep -v "$crapC0D3" | grep -vE '.wav|.jpg|.gif|.mp3|.ogg|.aif|.png|.avi|.mp4|iNST4LL.sh|master|HEAD|COMMIT_EDITMSG|config|description|sample|index|exclude|refs' | grep -vE '[a-z0-9]{38}') ;
+toDayChanged=$(find "$userHome" -cmin -"$minut3S" -type f | grep -v grep | grep -vE '.kate.swp|.save|.[a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]|.[a-zA-Z][0-9][0-9][0-9][0-9][0-9]|wH0rUNSon' | grep -v "$crapC0D3" | grep -vE '.wav|.jpg|.gif|.mp3|.ogg|.aif|.png|.avi|.mp4|master|HEAD|COMMIT_EDITMSG|config|description|sample|index|exclude|refs' | grep -vE '[a-z0-9]{38}') ;
 
 			if [[ "$toDayChanged" != '' ]] ;
 	then
@@ -120,7 +121,7 @@ diffANDchecksyntax(){
 
 ch3kingSnx='' ;
 
-			if [ -e "/usr/local/bin/$toC0pyIS" ] ;
+            if [ -e "/usr/local/bin/$toC0pyIS" ] ;
 	then
 			echo -e "\n check syntax for: $toC0pyIS\n" ;
 			diff -i "$listONme" "/usr/local/bin/$toC0pyIS" ;
@@ -143,28 +144,26 @@ ch3kingSnx='' ;
 			ch3kingSnx="perl"
 			echo "$listONme" | xargs $ch3kingSnx -wc ;
 		fi
-			if [[ "$?" = "2" ]] ;
+			if [[ "$?" != 0 ]] ;
 		then
-			printf "ok to re-edit? " ; read -r
+			printf "Do you want to re-edit? "; read -r
 
-			if [[ "$REPLY" = "ok" ]] ;
-		then
-			nano "$listONme" && diffANDchecksyntax ;
+		if [[ "$REPLY" = "ok" ]] ;
+	then
+		nano "$listONme" && diffANDchecksyntax ;
 	else
-			ch3kingSnx='' ;
-			echo -e "\n:: REMEBER :: $listONme\n" ;
+		echo -e "\n :: REMEMBER ::  $listONme\n" ;
 fi
-			elif [[ "$?" = "1" ]] ;
+			elif [[ $ch3kingSnx = '' ]] ;
 		then
-			echo -e "\n$listONme appears to be ok.\n" ;
-			copyToPath ;
-	else
-			tr -cd '\11\12\15\40-\176' <"$listONme" >"$tmpfolder"/convert-T0-utf-8.tmp &&
-			sudo cp -f "$tmpfolder"/convert-T0-utf-8.tmp "$listONme" && diffANDchecksyntax ;
-fi
-	fi
+			echo -e "\nnothing to check.\n" ;
 		else
-			touchtoC0pyinbin ;
+			echo -e "\n$listONme appears to be ok.\n" ;
+            copyToPath ;
+		fi
+	fi
+        else
+            touchtoC0pyinbin ;
 fi
 }
 
