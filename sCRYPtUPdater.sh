@@ -4,6 +4,7 @@
 # Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4
 #
 # Set the path to your Scripts like: dirINhome="myDistro" or dirINhome="Desktop/bash"
+
 dirINhome="bash-dev-enviro" ;
 
 # set the file a file on your Project Dir's that you use for crap code
@@ -12,6 +13,7 @@ crapC0D3="crap" ;
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 # TODO: reset the time interval, because "du" stderr
 #set -x
+
 		if [ ! $EUID = 0 ] ;
 	then
 		sudo "$0" ;
@@ -23,6 +25,13 @@ syntaxCHkr="pychecker shellcheck perl" ;
 
 # the Work Directory
 userHome="/home/${SUDO_USER}/${dirINhome}" ;
+# the temp folder
+	if [[ "$(df -h | grep -E /dev/shm$ | cut -f2 -d% | tr -d '\ ')" != '' ]] ;
+then
+	tmpfolder="$(df -h | grep -E /dev/shm$ | cut -f2 -d% | tr -d '\ ')" ;
+else
+	tmpfolder="/tmp" ;
+fi
 # User Host Control
 echo -e "\n$(date) :: as $USER :: in $(uname -n) :: in $userHome :: WORK -\n" >>"$userHome/wH0rUNSon" ;
 # wholeC0unt4: to start by zero after first 
@@ -30,7 +39,7 @@ wholeC0unt4="1" ;
 # listONmest4tus: to print how many bytes you've changed the last file you've edited
 listONmest4tus="0" ;
 # excULEC0D3s
-excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091" ; 
+excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091,SC2076" ; 
 export excULEC0D3s ;
 
 
@@ -108,6 +117,8 @@ fi
 
 diffANDchecksyntax(){
 
+ch3kingSnx='' ;
+
 			if [ -e "/usr/local/bin/$toC0pyIS" ] ;
 	then
 			echo -e "\n check syntax for: $toC0pyIS\n" ;
@@ -131,29 +142,25 @@ diffANDchecksyntax(){
 			ch3kingSnx="perl"
 			echo "$listONme" | xargs $ch3kingSnx -wc ;
 		fi
-			if [[ "$?" != 0 ]] ;
+			if [[ "$?" = "2" ]] ;
 		then
 			printf "ok to re-edit? " ; read -r
 
 			if [[ "$REPLY" = "ok" ]] ;
 		then
 			nano "$listONme" && diffANDchecksyntax ;
-		else
-			echo -e "\nno changes for  $listONme\n" ;
-		fi
-			elif [ "$?" = "2" ] ;
+	else
+			ch3kingSnx='' ;
+			echo -e "\n:: REMEBER :: $listONme\n" ;
+fi
+			elif [[ "$?" = "1" ]] ;
 		then
-			tr -cd '\11\12\15\40-\176' <"$listONme" >/dev/shm/convert-T0-utf-8.tmp &&
-			sudo cp -f /dev/shm/convert-T0-utf-8.tmp "$listONme" ;
-
-			elif [[ $ch3kingSnx = '' ]] ;
-		then
-			echo -e "\nnothing to check.\n" ;
-			copyToPath ;
-		else
 			echo -e "\n$listONme appears to be ok.\n" ;
 			copyToPath ;
-		fi
+	else
+			tr -cd '\11\12\15\40-\176' <"$listONme" >"$tmpfolder"/convert-T0-utf-8.tmp &&
+			sudo cp -f "$tmpfolder"/convert-T0-utf-8.tmp "$listONme" && diffANDchecksyntax ;
+fi
 	fi
 		else
 			touchtoC0pyinbin ;
@@ -187,7 +194,7 @@ fi
 
 
 exiter(){
-		sudo rm -f /dev/shm/convert-T0-utf-8.tmp 2>/dev/null;
+		sudo rm -f "$tmpfolder"/convert-T0-utf-8.tmp 2>/dev/null;
 		echo -e "\n$(date) :: as $USER :: in $(uname -n) :: in $userHome :: exit --\n" >>"$userHome/wH0rUNSon" &&
 		echo -e "\n\ngood bye, have a nice Day.\n" && exit 0 ;
 }
