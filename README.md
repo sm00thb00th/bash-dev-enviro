@@ -1,10 +1,10 @@
 # bash-dev-enviro
 
-° For Debian GNU/Linux with systemd. version 0.01 
+° For Debian GNU/Linux with systemd. version 0.01
 
-° Syntaxcheck with "pychecker", "perl -wc" and "shellcheck".
+° Syntaxcheck with "pychecker", "perl -wc" and "shellcheck"
 
-° Restart Server's.
+° Restart Server's
 
 ° Customizable Scripts
 
@@ -12,11 +12,11 @@
 
 # Usage:
 
-Run first: ./redundanz.sh from $HOME/bash-dev-enviro. You must have an entry in the sudoers file.
+Run first: ./redundanz.sh from $HOME/bash-dev-enviro. You must have an entry in the sudoers file
 
 The script will install all needed components:
 
-xfce4-terminal figlet x11-apps imagemagick nano snort clamav apache2 mysql-server pychecker shellcheck perl git
+xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano snort clamav apache2 mysql-server pychecker shellcheck perl git
 
 Close ./redundanz with ctrl+C.
 
