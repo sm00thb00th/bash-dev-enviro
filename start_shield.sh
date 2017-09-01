@@ -5,21 +5,21 @@
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 
+LANG="C" ;
+IFS=$(echo -e "\n\b") ;
+
 		if [ ! $EUID = 0 ] ;
 	then
 		sudo "$0" ;
 else
-LANG=C ;
-IFS=$(echo -e "\b") ;
+	if [[ "$(ps aux | grep -v grep | grep -v nano | grep shi3lD.sh | awk '{print $2}' | wc -l) " -gt "1" ]] ;
+then
 stopLoop="0" ;
 binarie0="/usr/sbin/clamd" ;
 binarie1="/usr/sbin/snort" ;
 interface="enp0s25" ;
 uUSER="$(for i in $(who -u | wc -l); do who | head -n1 | tail -n"$i" | awk '{print $1}'; done)" ;
 homeordner="/home/$uUSER/" ;
-
-	if [[ "$(ps aux | grep -v grep | grep -v nano | grep shi3lD.sh | awk '{print $2}' | wc -l) " -gt "1" ]] ;
-then
 
 puff_MACs(){
 

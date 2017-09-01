@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # version 0.01
-# depends on shi3lD.sh 
+# depends on shi3lD.sh
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
+
+LANG="C" ;
+IFS=$(echo -e "\n\b") ;
 
 		if [ ! $EUID = 0 ] ;
 	then
 		sudo "$0" ;
 else
-
-LANG="C" ;
-IFS=$(echo -e "\n\b") ;
 
 stop_network(){
 	sudo ip link set dev enp0s25 down && sleep 3 ;
