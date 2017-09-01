@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # version 0.01 
+
 #MONITOR
+
+LANG="C" ;
+
+IFS="$(echo -en "\n\b")" ;
 
 		if [ ! $EUID = 0 ] ;
 	then
@@ -10,10 +15,6 @@ else
 
 	if [[ "$(ps aux | grep -v grep | grep -v nano | grep redundanz.sh | awk '{print $2}' | wc -l) " -gt "1" ]] ;
 then
-
-LANG="C" ;
-
-IFS="$(echo -en "\n\b")" ;
 
 # dEFINe vars 
 
