@@ -47,7 +47,7 @@ fi
 		nohup apt-get --fix-missing --force-yes install "$toInst" | tee -a "/home/$SUDO_USER/installed" &
 		wait ;
 		apPR="$toInst, INSTALLED! " ;
-		sleep 1 ;
+		sleep 0.5 ;
 		((nNuM--)) ;
 fi
 		if [ "$nNuM" = "0" ]
@@ -56,7 +56,7 @@ fi
 		echo -e "\n done." ;
 fi
 # ON THE SCREEN 
-		printf "\rtesting for apps, $nNuM remaining, $apPR" ; sleep 2 ;
+		printf "\rtesting for apps, $nNuM remaining, $apPR" ; sleep 0.5 ;
 		clear ;
 done
 	chown "$SUDO_USER":"$SUDO_USER" "/home/$SUDO_USER/installed";
@@ -64,7 +64,7 @@ done
 
 		read -p "enter to continue "
 
-		if [[ "$PWD" =~ 'bash-dev-enviro' ]] && [[ ! "$environinstall" =~ "$(ls /usr/local/bin/*)" ]] ;
+		if [[ "$PWD" =~ 'bash-dev-enviro' ]] && [[ ! "$environinstall" =~ "$(ls /usr/local/bin/*)" ]] || [[ "$(ls /usr/local/bin/*)" =~ '' ]] ;
 	then
 		while [[ "$nNuM2" != "0" ]] ;
 	do
