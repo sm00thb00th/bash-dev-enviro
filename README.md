@@ -12,12 +12,6 @@
 
 # Usage:
 
-First:
-
-Edit shi3lD.sh and set $interface and $macadd.
-
-Edit sCRYPtUPdater.sh and set $dirINhome and $crapC0D3.
-
 run ./iNST4LL.sh from ../bash-dev-enviro. You must have an entry in the sudoers file
 
 The script will install all needed components:
