@@ -5,7 +5,7 @@
 # run this script like: ../bash-dev-enviro/./INSTALL.sh
 # You can Add Programs to myPrograms, but remove bevor $HOME/installed 
 
-myPrograms="xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano snort clamav apache2 mysql-server pychecker shellcheck perl git" ;
+myPrograms="snort xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano clamav clamav-daemon clamav-base clamav-freshclam clamav-milter clamdscan apache2 mysql-server sendmail pychecker shellcheck perl dwww git" ;
 
 ###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
 
@@ -44,8 +44,9 @@ fi
 		((nNuM--)) ;
 	else
 		echo -e "\ninstalling ${toInst}..." ;
-		nohup apt-get --fix-missing --force-yes install "$toInst" | tee -a "/home/$SUDO_USER/installed" &
+		nohup apt-get -f -m -y install "$toInst" | tee -a "/home/$SUDO_USER/installed" &
 		wait ;
+		sleep 1 ;
 		apPR="$toInst, INSTALLED! " ;
 		sleep 0.5 ;
 		((nNuM--)) ;
