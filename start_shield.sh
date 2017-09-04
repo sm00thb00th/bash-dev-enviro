@@ -1,4 +1,4 @@
-#!/bin/bash
+                                #!/bin/bash
 
 # version 0.01
 # depends on shi3lD.sh
