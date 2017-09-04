@@ -60,10 +60,10 @@ fi
 		printf "\rtesting for apps, $nNuM remaining, $apPR" ; sleep 0.5 ;
 		clear ;
 done
-	chown "$SUDO_USER":"$SUDO_USER" "/home/$SUDO_USER/installed";
-	echo -e "\nwe have $myPrograms successfully installed" ;
 
-		read -p "enter to continue "
+	ip link show | grep ether | awk '{print $2}' | tee -a "/home/$SUDO_USER/vendorsmac" ;
+	chown "$SUDO_USER":"$SUDO_USER" "/home/$SUDO_USER/vendorsmac" ;
+	chown "$SUDO_USER":"$SUDO_USER" "/home/$SUDO_USER/installed" ;
 
 		if [[ "$PWD" =~ 'bash-dev-enviro' ]] && [[ ! "$environinstall" =~ "$(ls /usr/local/bin/*)" ]] || [[ "$(ls /usr/local/bin/*)" =~ '' ]] ;
 	then
