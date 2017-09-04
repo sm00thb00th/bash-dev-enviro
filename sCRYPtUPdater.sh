@@ -40,14 +40,14 @@ wholeC0unt4="1" ;
 # listONmest4tus: to print how many bytes you've changed the last file you've edited
 listONmest4tus="0" ;
 # excULEC0D3s
-excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091,SC2076" ; 
+excULEC0D3s="SC2009,SC2172,SC2162,SC2010,SC2126,SC2016,SC2034,SC2005,SC2013,SC2059,SC2086,SC2027,SC1091,SC2076,SC2116" ; 
 export excULEC0D3s ;
 
 
 sC4n(){
 
 # toDayChanged: do a list of changed files in userHome
-toDayChanged=$(find "$userHome" -cmin -"$minut3S" -type f | grep -v grep | grep -vE '.kate.swp|.save|.[a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]|.[a-zA-Z][0-9][0-9][0-9][0-9][0-9]|wH0rUNSon' | grep -v "$crapC0D3" | grep -vE '.wav|.jpg|.gif|.mp3|.ogg|.aif|.png|.avi|.mp4|.iNST4LL.sh|master|HEAD|COMMIT_EDITMSG|config|description|sample|index|exclude|refs' | grep -vE '[a-z0-9]{38}') ;
+toDayChanged=$(find "$userHome" -cmin -"$minut3S" -type f | grep -v grep | grep -vE '.kate.swp|.save|.[a-zA-Z][a-zA-Z][0-9][0-9][0-9][0-9]|.[a-zA-Z][0-9][0-9][0-9][0-9][0-9]|wH0rUNSon' | grep -v "$crapC0D3" | grep -vE '.wav|.jpg|.gif|.mp3|.ogg|.aif|.png|.avi|.mp4|iNST4LL.sh|master|HEAD|COMMIT_EDITMSG|config|description|sample|index|exclude|refs' | grep -vE '[a-z0-9]{38}') ;
 
 			if [[ "$toDayChanged" != '' ]] ;
 	then
@@ -132,18 +132,21 @@ ch3kingSnx='' ;
 			ch3kingSnx="shellcheck" ;
 			LANG="enUS.UTF-8" ;
 			echo "$listONme" | xargs $ch3kingSnx -x -e "$excULEC0D3s" ;
+			exitc0de=$(echo $?) ;
 			
 			elif [[ "$listONmeIS" =~ 'Python ' ]] ;
 		then
 			ch3kingSnx="pychecker" ;
 			echo "$listONme" | xargs $ch3kingSnx ;
+			exitc0de=$(echo $?) ;
 
 			elif [[ "$listONmeIS" =~ 'Perl ' ]] ;
 		then
 			ch3kingSnx="perl"
 			echo "$listONme" | xargs $ch3kingSnx -wc ;
+			exitc0de=$(echo $?) ;
 		fi
-			if [[ "$?" != 0 ]] ;
+			if [[ "$exitc0de" != 0 ]] ;
 		then
 			printf "Do you want to re-edit? "; read -r
 
