@@ -49,7 +49,7 @@ serv-if-up.sh # depends on redundanz.sh
 
 sCRYPtUPdater.sh # Syntaxchecker and update to /usr/local/bin
 
-iNST4LL.sh # installs the environment and copy 8 new files in /usr/local/bin
+iNST4LL.sh # installs the environment and copy 7 new files in /usr/local/bin
 
 #
 
