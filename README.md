@@ -16,7 +16,7 @@ run ./iNST4LL.sh from ../bash-dev-enviro. You must have an entry in the sudoers 
 
 The script will install all needed components:
 
-snort xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano clamav clamav-daemon clamav-base 
+snort xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano clamav clamav-daemon clamav-base kate 
 clamav-freshclam clamav-milter clamdscan apache2 mysql-server sendmail pychecker shellcheck perl dwww git
 
 Run from Terminal: sCRYPtUPdater.sh, redundanz.sh to:
