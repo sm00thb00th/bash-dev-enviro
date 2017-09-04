@@ -4,7 +4,7 @@
 # Set the time interval, and just hit enter to update, to stop "pychecker" or "perl -wc" hit ctrl+4
 # Set the path to your Scripts like: dirINhome="myDistro" or dirINhome="Desktop/bash"
 
-dirINhome="Documents" ;
+dirINhome="bash-dev-enviro" ;
 
 # set the file a file on your Project Dir's that you use for crap code
 crapC0D3="crap" ;
