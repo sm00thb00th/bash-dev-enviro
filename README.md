@@ -35,6 +35,8 @@ With shi3lD.sh you change your MAC to obtain a new IP, crtl+C to revert to vendo
 
 installed # the list of the installed components, in $HOME
 
+vendorsmac # the list of the installed components, in $HOME
+
 shi3lD.sh # changes the mac-address
 
 start_shield.sh # depends on shi3lD.sh
