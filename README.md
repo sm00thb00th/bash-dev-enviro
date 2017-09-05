@@ -31,19 +31,7 @@ Restart Apache2 MySQL sendmail, takes care about free space and notifiy on /dev/
 
 # Files:
 
-[month][year].mac_recieves_dhcp_lease # working macs, in $HOME
-
-[month][year].mac_no_dhcp_lease # no dhcp lease, in $HOME
-
 installed # the list of the installed components, in $HOME
-
-vendorsmac # the list of the installed components, in $HOME
-
-shi3lD.sh # changes the mac-address
-
-start_shield.sh # depends on shi3lD.sh
-
-stop_shield.sh # depends on shi3lD.sh
 
 redundanz.sh # install needed components, by first run. restart servers
 
@@ -53,7 +41,7 @@ serv-if-up.sh # depends on redundanz.sh
 
 sCRYPtUPdater.sh # Syntaxchecker and update to /usr/local/bin
 
-iNST4LL.sh # installs the environment and copy 7 new files in /usr/local/bin
+iNST4LL.sh # installs the environment and copy 54 new files in /usr/local/bin
 
 #
 
