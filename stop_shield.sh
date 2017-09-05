@@ -13,10 +13,8 @@ IFS=$(echo -e "\n\b") ;
 		sudo "$0" ;
 else
 
-interface=$(ip link show | grep -v grep | grep MULTICAST | cut -f2 -d: | tr -d '\ ') ;
-
 stop_network(){
-	sudo ip link set dev "$interface" down && sleep 3 ;
+	sudo ip link set dev "$(ip link show | grep -v grep | grep MULTICAST | cut -f2 -d: | tr -d '\ ')" down && sleep 3 ;
 }
 
 take_a_look(){

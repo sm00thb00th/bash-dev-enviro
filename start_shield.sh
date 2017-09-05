@@ -21,6 +21,7 @@ homeordner="/home/${SUDO_USER}/" ;
 
 puff_MACs(){
 
+interface=$(ip link show | grep -v grep | grep MULTICAST | cut -f2 -d: | tr -d '\ ') ;
 nnumberOFinterface="$(echo "$interface" | wc -w | tr -d ' ')" ;
 
 		until [[ "$nnumberOFinterface" = "0" ]] ;
