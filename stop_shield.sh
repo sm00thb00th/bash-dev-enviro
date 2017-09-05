@@ -14,7 +14,7 @@ IFS=$(echo -e "\n\b") ;
 else
 
 stop_network(){
-	sudo ip link set dev "$(ip link show | grep -v grep | grep MULTICAST | cut -f2 -d: | tr -d '\ ')" down && sleep 3 ;
+	sudo ip link set dev "$(ip link show | grep -v grep | grep MULTICAST | cut -f2 -d: | tr -d '\ ')" down ; sleep 1 ;
 }
 
 take_a_look(){

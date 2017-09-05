@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# version 0.01
+# version 0.01 
 # depends on shi3lD.sh
 
-###     WARNING:    DON'T EDIT ANYTHING BELOW       ###
+###     WARNING:    DON'T EDIT ANYTHING BELOW       ### 
 
 LANG="C" ;
 IFS=$(echo -e "\n\b") ;

@@ -19,13 +19,15 @@ The script will install all needed components:
 snort xfce4-terminal figlet x11-apps imagemagick mc mutt eject nano clamav clamav-daemon clamav-base kate 
 clamav-freshclam clamav-milter clamdscan apache2 mysql-server sendmail pychecker shellcheck perl dwww git
 
-Run from Terminal: sCRYPtUPdater.sh, redundanz.sh to:
+Run from Terminal: sCRYPtUPdater.sh to:
 
 Edit your Projects with your favorite Editor, upload your Scripts or packed versions of perl or python to 
 
 /usr/local/bin, stop a big compile with ctrl+4, be sure you change more then one byte.
 
-With shi3lD.sh you change your MAC to obtain a new IP, crtl+C to revert to vendors mac.
+redundanz.sh :
+
+Restart Apache2 MySQL sendmail, takes care about free space and notifiy on /dev/pts3 and per email
 
 # Files:
 

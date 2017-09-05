@@ -28,7 +28,7 @@ puffeRR(){
 	else
 		clear;
 		echo -e "\n ::    D A N G E R      ::" ;
-		echo -e "\n :: your shield is down :: \n" && . /usr/local/bin/start_shield.sh ;
+		echo -e "\n :: changing macaddress :: \n" && . /usr/local/bin/start_shield.sh ;
 	fi
 }
 
@@ -41,8 +41,8 @@ exitHandler(){
 			if [[ $REPLY =~ y|Y|j|J ]] ;
 		then
 			sudo ip link set dev "$interface" down && sleep 5 && 
-			sudo ip link set dev "$interface" up && 
 			sudo ip link set dev "$interface" address "$(cat /home/${SUDO_USER}/vendorsmac)" && 
+			sudo ip link set dev "$interface" up && sleep 2 ;
 			sudo systemctl restart snort.service && clear && 
 			echo -e "\n .You where surfing with this MAC:\n\n
 			$(find /home/dob/* -name "*mac_recieves_dhcp_lease*" | grep "$(date | \
